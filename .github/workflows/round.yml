@@ -1,0 +1,14 @@
+name: Run Trading Result
+
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+
+jobs:
+  run-result:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Result API
+        run: |
+          curl https://bet999.gamer.gd/result.php
