@@ -1,8 +1,7 @@
 name: Run Trading Result
 
 on:
-  schedule:
-    - cron: "*/1 * * * *"
+  workflow_dispatch:
 
 jobs:
   run-result:
@@ -10,5 +9,4 @@ jobs:
 
     steps:
       - name: Call Result API
-        run: |
-          curl https://bet999.gamer.gd/result.php
+        run: curl https://bet999.gamer.gd/result.php
