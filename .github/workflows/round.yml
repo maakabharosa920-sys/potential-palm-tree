@@ -3,10 +3,17 @@ name: Run Trading Result
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: "*/1 * * * *"
+
+permissions:
+  contents: read
+
 jobs:
   run-result:
     runs-on: ubuntu-latest
 
     steps:
       - name: Call Result API
-        run: curl -A "Mozilla/5.0" https://bet999.gamer.gd/result.php
+        run: |
+          curl -L -A "Mozilla/5.0" https://bet999.gamer.gd/result.php
