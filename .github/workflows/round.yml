@@ -1,10 +1,9 @@
 name: Run Trading Result
 
 on:
-  workflow_dispatch:
-
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 permissions:
   contents: read
